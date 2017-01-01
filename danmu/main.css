@@ -1,0 +1,43 @@
+.contentbox{
+	position: relative;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	margin: 5% 10% 10px;
+	height: 300px;
+	overflow: hidden;
+	font-size: 15px;
+	line-height: 30px;
+}
+.contentbox p{
+	margin: 0;
+	position: absolute;
+	white-space: nowrap;
+}
+.buttons{
+	text-align: center;
+}
+input{
+	display: block;
+	width: 30%;
+	height: 32px;
+	margin: 10px auto;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+}
+input:focus{
+	box-shadow: 0 0 2px blue;
+}
+button{
+	background-color: #fff;
+	width: 150px;
+	height: 32px;
+	border: 1px solid;
+	border-radius: 2px;
+	cursor: pointer;
+}
+button.fire{
+	color: #f77;
+}
+button.clear{
+	color: #ccc;
+}
