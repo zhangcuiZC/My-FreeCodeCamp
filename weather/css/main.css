@@ -1,0 +1,74 @@
+*{
+	margin: 0;
+	padding: 0;
+	
+}
+.weather-box{
+	padding: 20px;
+	width: 500px;
+	height: 300px;
+	margin: 10% auto;
+	border: 1px solid #f77;
+	background: linear-gradient(to bottom,#ff7,#f77);
+}
+.today{
+	line-height: 20px;
+}
+.update{
+	display: inline-block;
+	float: right;
+	outline: 1px solid #f77;
+	padding: 0 10px;
+	font-size: 12px;
+}
+.todayinfo{
+	float: left;
+	margin-top: 10px;
+	width: 250px;
+	height: 150px;
+	/*border-right: 1px solid #f77;*/
+	text-align: center;
+	background-color: rgba(255,255,255,0.3);
+}
+.todayotherinfo{
+	float: right;
+	margin: 10px 0 0 0;
+	width: 240px;
+	height: 150px;
+	text-align: center;
+	background-color: rgba(255,255,255,0.3);
+}
+.future{
+	float: left;
+	margin-top: 10px;
+	height: 100px;
+	padding: 5px 0;
+	width: 500px;
+	background-color: rgba(255,255,255,0.3);
+}
+.todayinfo h1,.todayinfo p{
+	margin-top: 8px;
+}
+.todayotherinfo h3,.todayotherinfo p{
+	margin-top: 8px;
+}
+.todayotherinfo p{
+	text-align: left;
+	padding: 2px 10px;
+	text-indent: 2em;
+}
+.future ul li{
+	float: left;
+	width: 99px;
+	border-right: 1px solid #ff7;
+	list-style: none;
+	height: 100px;
+	text-align: center;
+}
+.future-item5{
+	border: none !important;
+}
+.future ul li p{
+	font-size: 12px;
+	margin-top: 3px;
+}
