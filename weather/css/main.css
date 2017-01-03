@@ -1,7 +1,7 @@
 *{
 	margin: 0;
 	padding: 0;
-	
+	font-family: "microsoft yahei",sans-serif;
 }
 .weather-box{
 	padding: 20px;
@@ -13,6 +13,18 @@
 }
 .today{
 	line-height: 20px;
+	position: relative;
+}
+.choosecity{
+	position: absolute;
+	top: 0;
+	right: 50px;
+}
+.choosecity .city{
+	width: 5em;
+	background-color: transparent;
+	outline: none;
+	border: 1px solid #f77;
 }
 .update{
 	display: inline-block;
@@ -20,23 +32,24 @@
 	outline: 1px solid #f77;
 	padding: 0 10px;
 	font-size: 12px;
+	cursor: pointer;
 }
 .todayinfo{
 	float: left;
 	margin-top: 10px;
 	width: 250px;
 	height: 150px;
-	/*border-right: 1px solid #f77;*/
 	text-align: center;
 	background-color: rgba(255,255,255,0.3);
 }
 .todayotherinfo{
 	float: right;
 	margin: 10px 0 0 0;
-	width: 240px;
-	height: 150px;
-	text-align: center;
+	width: 220px;
+	height: 146px;
+	padding: 2px 10px;
 	background-color: rgba(255,255,255,0.3);
+	overflow: hidden;
 }
 .future{
 	float: left;
@@ -49,26 +62,29 @@
 .todayinfo h1,.todayinfo p{
 	margin-top: 8px;
 }
-.todayotherinfo h3,.todayotherinfo p{
-	margin-top: 8px;
+.todayotherinfo h4{
+	margin: 12px 0 5px;
 }
 .todayotherinfo p{
+	margin-top: 5px;
 	text-align: left;
-	padding: 2px 10px;
-	text-indent: 2em;
+	font-size: 12px;
 }
 .future ul li{
 	float: left;
-	width: 99px;
-	border-right: 1px solid #ff7;
+	width: 124px;
+	border-right: 1px solid #eee;
 	list-style: none;
 	height: 100px;
 	text-align: center;
 }
-.future-item5{
+.future-item4{
 	border: none !important;
 }
 .future ul li p{
 	font-size: 12px;
 	margin-top: 3px;
+}
+.future ul li h3{
+	margin: 10px 0;
 }

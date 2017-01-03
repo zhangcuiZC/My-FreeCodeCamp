@@ -4,57 +4,51 @@
 	<title>weather</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
 	<div class="weather-box">
-		<p class="today">今天的日期 实时：<span></span>°C<span class="update">更新</span></p>
+		<h5 class="today"><span class="thiscity">-</span>&nbsp;&nbsp;星期<span class="day"></span>&nbsp;&nbsp;<span class="year"></span>年<span class="month"></span>月<span class="date"></span>日
+		<span class="choosecity">选择城市：<input type="text" name="city" class="city" value="北京" maxlength="6"></span>
+		<span class="update">更新</span></h5>
 		<div class="todayinfo">
-			<h1>6~-6</h1>
-			<p>霾</p>
-			<p>南风微风</p>
-			<p>实时空气质量：<span>263重度污染</span></p>
+			<h1 class="temprange">~</h1>
+			<p class="type">-</p>
+			<p class="wind">-</p>
+			<p>实时空气质量：<span class="aqi">-</span></p>
 		</div>
 		<div class="todayotherinfo">
-			<h3>感冒指数</h3>
-			<p>昼夜温差大，且空气湿度较大，易发生感冒，请注意适当增减衣服，加强自我防护避免感冒。</p>
+			<p class="time">更新中……</p>
+			<p>实时：<span class="nowtemp"></span>°C</p>
+			<h4>感冒指数：</h4>
+			<p class="coldinfo"></p>
 		</div>
 		<div class="future">
 			<ul>
 				<li class="future-item1">
-					<h6>明天日期</h6>
-					<h3>6~-6</h3>
-					<p>霾</p>
-					<p>风向风力</p>
-					<p>空气质量</p>
+					<h6 class="date">-</h6>
+					<h3 class="temprange">~</h3>
+					<p class="type">-</p>
+					<p class="wind">-</p>
 				</li>
 				<li class="future-item2">
-					<h6>明天日期</h6>
-					<h3>6~-6</h3>
-					<p>霾</p>
-					<p>风向风力</p>
-					<p>空气质量</p>
+					<h6 class="date">-</h6>
+					<h3 class="temprange">~</h3>
+					<p class="type">-</p>
+					<p class="wind">-</p>
 				</li>
 				<li class="future-item3">
-					<h6>明天日期</h6>
-					<h3>6~-6</h3>
-					<p>霾</p>
-					<p>风向风力</p>
-					<p>空气质量</p>
+					<h6 class="date">-</h6>
+					<h3 class="temprange">~</h3>
+					<p class="type">-</p>
+					<p class="wind">-</p>
 				</li>
 				<li class="future-item4">
-					<h6>明天日期</h6>
-					<h3>6~-6</h3>
-					<p>霾</p>
-					<p>风向风力</p>
-					<p>空气质量</p>
-				</li>
-				<li class="future-item5">
-					<h6>明天日期</h6>
-					<h3>6~-6</h3>
-					<p>霾</p>
-					<p>风向风力</p>
-					<p>空气质量</p>
+					<h6 class="date">-</h6>
+					<h3 class="temprange">~</h3>
+					<p class="type">-</p>
+					<p class="wind">-</p>
 				</li>
 			</ul>
 		</div>
