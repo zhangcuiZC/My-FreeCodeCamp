@@ -3,12 +3,19 @@
 	padding: 0;
 	font-family: "microsoft yahei";
 }
+.logo img{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100px;
+	margin: auto auto;
+}
 body{
 	overflow-y: scroll;
 }
 .searchbox{
 	width: 80%;
-	margin-top: 10%;
+	margin-top: 300px;
 	margin-left: auto;
 	margin-right: auto;
 	

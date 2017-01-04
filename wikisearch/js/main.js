@@ -44,6 +44,7 @@ $(function(){
 				var searchurl=url+searchwhat;
 				search(searchurl);
 				// 动画效果
+				$(".logo img").fadeOut();
 				$(".searchbox").animate({marginTop:"5px"}, 400,function(){
 					$(".searchresult").animate({height:"show"}, 600);
 				});
@@ -55,7 +56,9 @@ $(function(){
 		// 文本框获得焦点后触发
 		$(".inputbox").focus(function() {
 			$(this).select();
-			$(".searchbox").animate({marginTop:"10%"}, 400);
+			$(".searchbox").animate({marginTop:"300px"}, 400 ,function(){
+				$(".logo img").fadeIn();
+			});
 			$(".searchresult").stop(true,true).animate({height:"hide"}, 600);
 		}).keyup(function(event) {
 			// 按回车触发搜索
