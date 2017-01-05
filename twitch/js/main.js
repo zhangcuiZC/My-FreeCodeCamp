@@ -2,11 +2,10 @@ $(function(){
 	(function(){
 		$.ajax({
 			url: 'https://api.twitch.tv/kraken/streams/summary',
-			// headers:{
+			headers:{
 				Accept: 'application/javascript',
-			// },
-			dataType:'jsonp',
-			type:'get',
+				'Client-Id':'1gpgz9i8q62g3jqrpr3csg8e4sj7u9'
+			},
 			success:function(response){
 				console.log(response);
 			}
