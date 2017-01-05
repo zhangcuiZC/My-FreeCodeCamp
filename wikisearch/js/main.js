@@ -64,6 +64,7 @@ $(function(){
 			// 按回车触发搜索
 			if (event.keyCode==13) {
 				$(".searchbtn").trigger('click');
+				$(".inputbox").blur();
 			}
 		});
 	})();
