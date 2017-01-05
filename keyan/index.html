@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>科研工具</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: "microsoft yahei";
+		}
+		.box{
+			float: left;
+			background-color: #ccc;
+			width: 500px;
+			height: 500px;
+			margin: 20px 0 0 50px;
+			border-bottom: 2px solid black;
+			border-left: 2px solid black;
+		}
+		.box .dot{
+			position: absolute;
+			width: 4px;
+			height: 4px;
+			background-color: red;
+		}
+		.xbox,.ybox{
+			margin-left: 50px;
+			margin-top: 20px;
+			float: left;
+			width: 100px;
+			height: 500px;
+			overflow-y: scroll;
+			background-color: #ccc;
+			font-size: 12px;
+		}
+		.otherinfo{
+			width: 200px;
+			float: left;
+			margin-left: 50px;
+			margin-top: 20px;
+		}
+		.back{
+			background-color: #f77;
+			width: 200px;
+			height: 50px;
+			color: #fff;
+			float: left;
+			font-size: 20px;
+			border: none;
+			outline: none;
+			cursor: pointer;
+		}
+		.count{
+			float: left;
+			width: 200px;
+			height: 50px;
+			line-height: 50px;
+			background: #ccc;
+			text-align: center;
+			margin-top: 20px;
+		}
+
+	</style>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		var x,y,dotx,doty;
+		$("html").mouseup(function(event) {
+			x=event.clientX;
+			y=event.clientY;
+			dotx=x-50;
+			doty=y-20;
+			if(x>=50&&x<=550&&y>=20&&y<=520){
+				var newdot=document.createElement("div");
+				$(newdot).addClass('dot').css({
+					left: x,
+					top: y
+				});
+				$(".box").append(newdot);
+
+				var axisx=document.createElement("p");
+				$(axisx).text(dotx/5);
+				$(".xbox").append(axisx);
+
+				var axisy=document.createElement("p");
+				$(axisy).text(Math.floor((100-doty/5)*100)/100);
+				$(".ybox").append(axisy);
+
+				var len=$(".box .dot").length;
+				$(".num").text(len);
+			}
+		});
+		$(".back").click(function(event) {
+			$(".box .dot:last").remove();
+			$(".xbox p:last").remove();
+			$(".ybox p:last").remove();
+			var len=$(".box .dot").length;
+			$(".num").text(len);
+		});
+	});
+	</script>
+</head>
+<body>
+	<div class="box">
+		
+	</div>
+	<div class="xbox">
+		
+	</div>
+	<div class="ybox">
+		
+	</div>
+	<div class="otherinfo">
+		<button class="back">
+			回退一点
+		</button>
+		<div class="count">
+			<h3>目前点数：<span class="num"></span></h3>
+		</div>
+	</div>
+</body>
+</html>
