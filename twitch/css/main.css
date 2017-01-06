@@ -52,6 +52,12 @@ a{
 	background-color: #ccc;
 	font-size: 12px;
 	overflow: hidden;
+	transition: all 0.4s;
+}
+.content .item:hover{
+	box-shadow: 3px 3px 2px 2px #666;
+	transition: all 0.4s;
+	background-color: #fff;
 }
 .content .item img{
 	display: block;
@@ -95,7 +101,7 @@ a{
 	margin: auto;
 	width: 80px;
 	height: 80px;
-	background-color: rgba(0,0,0,0.7);
+	border: 2px solid #fff;
 	border-radius: 50%;
 }
 .layer span i{

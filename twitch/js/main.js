@@ -40,9 +40,9 @@ $(function(){
 		});
 
 		$(".item").hover(function() {
-			$(this).find('.layer').fadeIn(200);
+			$(this).find('.layer').fadeIn(400);
 		}, function() {
-			$(this).find('.layer').fadeOut(200);
+			$(this).find('.layer').fadeOut(400);
 		});
 	})();
 });
