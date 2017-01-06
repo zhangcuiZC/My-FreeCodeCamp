@@ -1,0 +1,120 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "microsoft yahei";
+}
+a{
+	color: #000;
+	text-decoration: none;
+}
+.clearfix{
+	clear: both;
+}
+.topbar{
+	position: relative;
+	width: 80%;
+	height: 50px;
+	background-color: #f77;
+	color: #fff;
+	line-height: 50px;
+	font-size: 24px;
+	margin: 15% auto 0;
+	border: 1px solid #f77;
+}
+.topbar .title{
+	float: left;
+	margin-left: 1%;
+}
+.topbar .btn{
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: purple;
+	padding-right: 5%;
+	padding-left: 5%;
+	cursor: pointer;
+}
+.content{
+	width: 79%;
+	padding-right: 1%;
+	margin: 5px auto 5px;
+	border: 1px solid #f77;
+	display: none;
+}
+.content .item{
+	position: relative;
+	float: left;
+	width: 24%;
+	margin-left: 1%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	height: auto;
+	background-color: #ccc;
+	font-size: 12px;
+	overflow: hidden;
+}
+.content .item img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.content .item .status{
+	display: block;
+	line-height: 1.1em;
+	height: 2.2em;
+	padding: 5px;
+	padding-bottom: 0;
+	font-weight: bold;
+	overflow: hidden;
+}
+.content .item .name{
+	float: left;
+	padding: 5px;
+	font-weight: bold;
+}
+.content .item .num{
+	float: right;
+	padding: 5px;
+}
+.content .layer{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.5);
+	overflow: hidden;
+	display: none;
+}
+.content .layer span{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 80px;
+	height: 80px;
+	background-color: rgba(0,0,0,0.7);
+	border-radius: 50%;
+}
+.layer span i{
+	width: 24px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 30px;
+	margin: auto;
+}
+.layer span i:after{
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-left: 24px solid #fff;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+}
