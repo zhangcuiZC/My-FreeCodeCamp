@@ -15,13 +15,12 @@
 }
 .caltitle{
 	font-size: 12px;
-	padding: 0 2% 0;
+	padding-left: 2%;
 	height: 30px;
 	line-height: 30px;
 }
 .caltitle span{
 	float: right;
-	margin-right: -2%;
 	width: 40px;
 	height: 30px;
 	line-height: 28px;
