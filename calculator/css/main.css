@@ -7,11 +7,31 @@
 	clear: both;
 }
 .calbox{
-	height: 500px;
-	width: 350px;
+	height: 530px;
+	width: 300px;
 	margin: 20px auto 0;
-	border: 1px solid #ccc;
+	border: 1px solid #333;
 	overflow: hidden;
+}
+.caltitle{
+	font-size: 12px;
+	padding: 0 2% 0;
+	height: 30px;
+	line-height: 30px;
+}
+.caltitle span{
+	float: right;
+	margin-right: -2%;
+	width: 40px;
+	height: 30px;
+	line-height: 28px;
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+}
+.caltitle span:hover{
+	background-color: #f10823;
+	color: #fff;
 }
 .calprogress{
 	float: right;
@@ -19,6 +39,7 @@
 	height: 60px;
 	font-size: 24px;
 	line-height: 60px;
+	color: #888;
 }
 .calresult{
 	float: right;
@@ -34,10 +55,6 @@
 	height: 320px;
 	border-collapse: collapse;
 	font-size: 24px;
-	user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
 }
 .calkey td.smallfont{
 	font-size: 16px;
@@ -58,4 +75,10 @@
 	padding-left: 2px;
 	font-size: 8px;
 	vertical-align: top;
+}
+.caltitle,.calkey{
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }

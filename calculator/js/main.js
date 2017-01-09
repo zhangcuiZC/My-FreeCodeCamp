@@ -33,7 +33,7 @@ $(function(){
 
 	// 自适应结果框的函数
 	function adjustwidth(){
-		if(calresultbox.width()>=340){
+		if(calresultbox.width()>=292){
 			fontsize-=2;
 			calresultbox.css('fontSize', fontsize+"px");
 			adjustwidth();
@@ -75,7 +75,7 @@ $(function(){
 						calresultbox.text('无效输入');
 					}else{
 						calresultbox.text(calresult).css('fontSize', '72px');
-						if(calresultbox.width()>=340){
+						if(calresultbox.width()>=292){
 							adjustwidth();
 						}
 					}
@@ -161,5 +161,9 @@ $(function(){
 			}
 		}
 		
+	});
+
+	$(".caltitle span").click(function(event) {
+		alert("这个按钮并没有什么用_(:з)∠)_");
 	});
 });
