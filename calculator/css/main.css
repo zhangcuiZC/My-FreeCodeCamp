@@ -3,8 +3,11 @@
 	padding: 0;
 	font-family: "microsoft yahei";
 }
+.clearfix{
+	clear: both;
+}
 .calbox{
-	height: 600px;
+	height: 500px;
 	width: 350px;
 	margin: 20px auto 0;
 	border: 1px solid #ccc;
@@ -18,24 +21,25 @@
 	line-height: 60px;
 }
 .calresult{
-	float: left;
-	width: 96%;
+	float: right;
 	padding: 0 2% 0;
-	height: 118px;
+	height: 120px;
 	font-size: 72px;
-	line-height: 118px;
-	border-top: 1px solid #eee;
-	border-bottom: 1px solid #eee;
+	line-height: 120px;
 	text-align: right;
 }
 .calkey{
 	float: left;
 	width: 100%;
-	height: 420px;
+	height: 320px;
 	border-collapse: collapse;
 	font-size: 24px;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
-.calkey tr.smallfont{
+.calkey td.smallfont{
 	font-size: 16px;
 }
 .calkey tr:not(.smallfont){
