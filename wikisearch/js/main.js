@@ -8,14 +8,11 @@ $(function(){
 				url: url,
 				success:function(response){
 					// 获取响应信息中的pageid
-					var x=[];
-					for (var pageid in response.query.pages) {
-						x.push(pageid);
-					}
+					var x=Object.keys(response.query.pages);
 
 					// 得到每个pageid的信息，包括搜索标题，摘要，链接，图片等
 					$(x).each(function(index, el) {
-						var page=response.query.pages[x[index]];
+						var page=response.query.pages[el];
 
 						var title=page.title;
 						var extract=page.extract;
