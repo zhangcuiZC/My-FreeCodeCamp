@@ -8,7 +8,7 @@ $(function(){
 
 	// 求阶乘的函数
 	function fact(num){
-		if(parseInt(num)==num&&num<170){
+		if(parseInt(num)==num&&num<170&&num>=0){
 			return num<=1?1:num*fact(num-1);
 		}else{
 			return "无效输入";
