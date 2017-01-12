@@ -1,29 +1,18 @@
 $(function(){
-	var calprogress="";
-	var calresult;
-	var calprogressbox=$(".calprogress");
-	var calresultbox=$(".calresult");
-	var flag=true;
-	var fontsize;
+	var calprogress="",
+		calresult,
+		calprogressbox=$(".calprogress"),
+		calresultbox=$(".calresult"),
+		flag=true,
+		fontsize;
 
 	// 求阶乘的函数
 	function fact(num){
-		var fact;
-		if(parseInt(num)==num){
-			if(num>0&&num<170){
-				fact=num;
-				for(var i=num-1;i>0;i--){
-					fact*=i;
-				}
-			}else if(num===0){
-				fact=1;
-			}else{
-				fact="无效输入";
-			}
+		if(parseInt(num)==num&&num<170){
+			return num<=1?1:num*fact(num-1);
 		}else{
-			fact="无效输入";
+			return "无效输入";
 		}
-		return fact;
 	}
 
 	// 求平方根的函数
