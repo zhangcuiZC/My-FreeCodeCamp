@@ -44,8 +44,17 @@
 	border-radius: 50%;
 	cursor: pointer;
 }
+.clock.active{
+	border-color: green;
+}
+.clock.active2{
+	border-color: purple !important;
+}
 .clock p{
 	font-size: 48px;
 	text-align: center;
 	margin: 60px 0;
+}
+.clock-dot{
+	display: none;
 }
