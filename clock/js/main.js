@@ -18,6 +18,8 @@ $(function(){
 		$clocklayer2=$(".clock-layer2"),
 
 		timer=null,
+		greenbgtimer=null,
+		purplebgtimer=null,
 		breaktime=true,
 		flag=true;
 	//事件委托
@@ -42,6 +44,10 @@ $(function(){
 					$clockminute.text($sessionnum.text());
 					$clockdot.hide();
 					$clocksecond.text('');
+					$clockname.text("Session");
+					$clocklayer1.css('height', "0");
+					$clocklayer2.css('height', "0");
+					$clocklayer2.removeClass('active');
 				}
 			}
 
@@ -51,6 +57,10 @@ $(function(){
 					$clockminute.text($sessionnum.text());
 					$clockdot.hide();
 					$clocksecond.text('');
+					$clockname.text("Session");
+					$clocklayer1.css('height', "0");
+					$clocklayer2.css('height', "0");
+					$clocklayer2.removeClass('active');
 				}
 			}
 		}
@@ -62,6 +72,10 @@ $(function(){
 					$clockminute.text($sessionnum.text()-1);
 					$clockdot.show();
 					$clocksecond.text('59');
+					$clockname.text("Session");
+					$clocklayer1.css('height', "0");
+					$clocklayer2.css('height', "0");
+					$clocklayer2.removeClass('active');
 				}
 				timer=setInterval(function(){
 					var second=String($clocksecond.text()-1).length===1?"0"+($clocksecond.text()-1):$clocksecond.text()-1;
@@ -72,16 +86,20 @@ $(function(){
 						if($clockminute.text()==-1){
 							if(breaktime){//进入break计时
 								$clockminute.text($breaknum.text()-1);
+								$clockname.text("Break!!");
 								breaktime=false;
 								$clock.addClass('active2');
+								purplebg($breaknum.text());
 							}else{//彻底结束
 								clearInterval(timer);
 								$clocksecond.text('00');
 								$clockminute.text('0');
+								$clockname.text("Ended");
 								breaktime=true;
 								flag=true;
 								$clock.removeClass('active');
 								$clock.removeClass('active2');
+								$clocklayer2.addClass('active');
 							}
 						}
 					}
@@ -92,16 +110,31 @@ $(function(){
 				$clock.addClass('active');
 			}else{//暂停，暂停时可以点击加减按钮重新安排时间
 				clearInterval(timer);
+				clearInterval(greenbgtimer);
+				clearInterval(purplebgtimer);
 				flag=true;
 				$clock.removeClass('active');
+				$clock.removeClass('active2');
 			}
 		}
 
 	});
 
 	function greenbg(time){
-		var greenbgtimer=setInterval(function(){
-			$clocklayer1.css('height', "+=5.72px");
-		},1200*time);
+		greenbgtimer=setInterval(function(){
+			$clocklayer1.css('height', "+=4.85px");
+			if($clocklayer1.height()>=286){
+				clearInterval(greenbgtimer);
+			}
+		},1000*time);
+	}
+
+	function purplebg(time){
+		purplebgtimer=setInterval(function(){
+			$clocklayer2.css('height', "+=4.85px");
+			if($clocklayer2.height()>=286){
+				clearInterval(purplebgtimer);
+			}
+		},1000*time);
 	}
 });

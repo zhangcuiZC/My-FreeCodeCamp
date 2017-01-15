@@ -51,12 +51,15 @@ body{
 	overflow: hidden;
 }
 .clock.active{
-	border-color: green;
+	border-color: #e3008c;
 }
 .clock.active2{
 	border-color: purple !important;
+	box-shadow: 0 0 8px 4px purple;
 }
 .clock p{
+	position: relative;
+	z-index: 2;
 	font-size: 48px;
 	margin: 60px 0;
 	text-align: center;
@@ -73,13 +76,13 @@ body{
 	border: 2px solid #eee;
 	border-radius: 50%;
 	overflow: hidden;
+	z-index: 1;
 }
 .clock-layer1{
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	background-color: green;
-	z-index: -1;
+	background-color: #e3008c;
 	height: 0;
 	width: 100%;
 }
@@ -88,7 +91,9 @@ body{
 	left: 0;
 	bottom: 0;
 	background-color: purple;
-	z-index: -2;
 	height: 0;
 	width: 100%;
+}
+.clock-layer2.active{
+	background-color: #f77 !important;
 }
