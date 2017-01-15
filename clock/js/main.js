@@ -14,14 +14,16 @@ $(function(){
 		$clockminute=$(".clock-minute"),
 		$clocksecond=$(".clock-second"),
 		$clockdot=$(".clock-dot"),
+		$clocklayer1=$(".clock-layer1"),
+		$clocklayer2=$(".clock-layer2"),
 
 		timer=null,
 		breaktime=true,
 		flag=true;
-
+	//事件委托
 	$box.on('click', '.click', function(event) {
 		var $e=$(event.target);
-		if(flag){
+		if(flag){//flag为true表示倒计时未开始，可以点击加减进行时间更改
 			if($e.hasClass('break-minus')){
 				if($breaknum.text()-0>1){
 					$breaknum.text($breaknum.text()-1);
@@ -55,6 +57,7 @@ $(function(){
 
 		if($e.hasClass('start')){
 			if(flag){
+				// 如果倒计时未开始或者已经结束，则重新开始
 				if($clocksecond.text()===""||($clockminute.text()==="0"&&$clocksecond.text()==="00")){
 					$clockminute.text($sessionnum.text()-1);
 					$clockdot.show();
@@ -83,9 +86,11 @@ $(function(){
 						}
 					}
 				},1000);
+				greenbg($sessionnum.text());
+				// flag为false表示倒计时正在进行中，不可点击加减按钮
 				flag=false;
 				$clock.addClass('active');
-			}else{//暂停
+			}else{//暂停，暂停时可以点击加减按钮重新安排时间
 				clearInterval(timer);
 				flag=true;
 				$clock.removeClass('active');
@@ -93,4 +98,10 @@ $(function(){
 		}
 
 	});
+
+	function greenbg(time){
+		var greenbgtimer=setInterval(function(){
+			$clocklayer1.css('height', "+=5.72px");
+		},1200*time);
+	}
 });
