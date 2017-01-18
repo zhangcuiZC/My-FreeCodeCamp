@@ -104,7 +104,11 @@ $(function(){
 						}
 					}
 				},1000);
-				greenbg($sessionnum.text());
+				if($clocklayer1.height()>=286){
+					purplebg($breaknum.text());
+				}else{
+					greenbg($sessionnum.text());
+				}
 				// flag为false表示倒计时正在进行中，不可点击加减按钮
 				flag=false;
 				$clock.addClass('active');
