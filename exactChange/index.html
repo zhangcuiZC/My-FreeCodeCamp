@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+	<div class="changebox">
+		<div class="change-title">
+			收银程序-CNY
+		</div>
+		<div class="change-content">
+			<div class="change-left">
+				<div class="change-need">
+					应收：<input type="text" name="need" value="3.2">
+				</div>
+				<div class="change-actual">
+					实收：<input type="text" name="actual" value="100">
+				</div>
+				<p>收银机存金/张</p>
+				<div class="change-repo">
+					<label>100：<input type="text" name="ONE_HUNDRED" value="2"></label>
+					<label>50：<input type="text" name="FIFTY" value="3"></label>
+					<label>20：<input type="text" name="TWENTY" value="3"></label>
+					<label>10：<input type="text" name="TEN" value="2"></label>
+					<label>5：<input type="text" name="FIVE" value="11"></label>
+					<label>1：<input type="text" name="ONE" value="90"></label>
+					<label>0.5：<input type="text" name="HALF" value="10"></label>
+					<label>0.1：<input type="text" name="DIME" value="31"></label>
+				</div>
+
+			</div>
+			<div class="change-right">
+				<input type="button" name="change" value="找零/张">
+				<p>需找零：<span class="change-total">-</span></p>
+				<p>100：<span class="ONE_HUNDRED">-</span></p>
+				<p>50：<span class="FIFTY">-</span></p>
+				<p>20：<span class="TWENTY">-</span></p>
+				<p>10：<span class="TEN">-</span></p>
+				<p>5：<span class="FIVE">-</span></p>
+				<p>1：<span class="ONE">-</span></p>
+				<p>0.5：<span class="HALF">-</span></p>
+				<p>0.1：<span class="DIME">-</span></p>
+				<p class="change-closed">全部找零</p>
+				<p class="change-insuff">余额不足</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
