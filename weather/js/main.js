@@ -53,8 +53,8 @@ $(function(){
 			var url="http://wthrcdn.etouch.cn/weather_mini?city="+city;
 			$.ajax({
 				url: url,
-				success:function(info){
-					var tempinfo=JSON.parse(info);
+				dataType:"jsonp",
+				success:function(tempinfo){
 					// 如果成功取得天气信息
 					if(tempinfo.status==1000){
 						// 更新时间
