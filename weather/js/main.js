@@ -38,52 +38,46 @@ $(function(){
 			$(".today .year").text(year);
 			$(".today .month").text(month+1);
 			$(".today .date").text(date);
-			$(".todayotherinfo .time").text("更新时间："+time);
 		}
-
-		// 取出字符串中数字的方法
-		String.prototype.str2num=function(){
-			var reg=/[\d-]/g;
-			return parseInt(this.match(reg).join(""));
-		};
+		updatedate();
 
 		// 更新所有天气信息
 		function update(){
 			var city=$(".city").val()||"北京";
-			var url="http://wthrcdn.etouch.cn/weather_mini?city="+city;
+			// var url="http://wthrcdn.etouch.cn/weather_mini?city="+city;
+			var url="https://free-api.heweather.com/v5/weather?key=4a520f7c897c4049b42e1c9c526e6468&city="+city;
 			$.ajax({
 				url: url,
-				dataType:"jsonp",
-				success:function(tempinfo){
-					// 如果成功取得天气信息
-					if(tempinfo.status==1000){
-						// 更新时间
-						updatedate();
-						// 显示选择的城市
+				success:function(info){
+					if(info.HeWeather5[0].status=="ok"){
+						var today=info.HeWeather5[0].daily_forecast[0].tmp;
+						var now=info.HeWeather5[0].now;
+
 						$(".today .thiscity").text(city);
+						$(".todayotherinfo .time").text("数据更新时间："+info.HeWeather5[0].basic.update.loc);
 
-						// 实时温度和感冒指数
-						$(".todayotherinfo .nowtemp").text(tempinfo.data.wendu);
-						$(".todayotherinfo .coldinfo").text(tempinfo.data.ganmao);
+						$(".todayotherinfo .nowtemp").text(now.tmp);
+						$(".todayotherinfo .coldinfo").text(info.HeWeather5[0].suggestion.flu.brf+" : "+info.HeWeather5[0].suggestion.flu.txt);
+						$(".todayotherinfo .airinfo").text(info.HeWeather5[0].suggestion.air.brf+" : "+info.HeWeather5[0].suggestion.air.txt);
+						$(".todayotherinfo .comfinfo").text(info.HeWeather5[0].suggestion.comf.brf+" : "+info.HeWeather5[0].suggestion.comf.txt);
 
-						// 更新今日天气详细信息
-						var today=tempinfo.data.forecast[0];
-						var temprange=today.low.str2num()+"~"+today.high.str2num();
+
+
+						var temprange=today.min+"~"+today.max;
 						$(".todayinfo .temprange").text(temprange);
-						$(".todayinfo .type").text(today.type);
-						var wind=today.fengli+today.fengxiang;
-						$(".todayinfo .wind").text(wind);
-						$(".todayinfo .aqi").text(tempinfo.data.aqi);
+						$(".todayinfo .type").text(now.cond.txt);
+						$(".todayinfo .wind").text(now.wind.dir+now.wind.sc+"级");
+						$(".todayinfo .aqi").text(info.HeWeather5[0].aqi.city.aqi+" "+info.HeWeather5[0].aqi.city.qlty);
 
 						// 未来四天预报
 						$(".future li").each(function(index) {
 							var idx=index+1;
-							var future=tempinfo.data.forecast[idx];
+							var future=info.HeWeather5[0].daily_forecast[idx];
 
 							var date=future.date;
-							var temprange=future.low.str2num()+"~"+future.high.str2num();
-							var type=future.type;
-							var wind=future.fengli+future.fengxiang;
+							var temprange=future.tmp.min+"~"+future.tmp.max;
+							var type=future.cond.txt_n;
+							var wind=future.wind.dir+future.wind.sc+"级";
 
 							$(this).find('.date').text(date);
 							$(this).find('.temprange').text(temprange);

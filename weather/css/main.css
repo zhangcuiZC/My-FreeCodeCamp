@@ -8,9 +8,9 @@
 	width: 500px;
 	height: 300px;
 	margin: 10% auto;
-	border: 1px solid #f77;
-	background: linear-gradient(to bottom right,#ff7,#f77);
-	background-color: #f77;
+	background: #f77 url(../bg.jpg) no-repeat center;
+	-webkit-background-size: cover;
+	background-size: cover;
 }
 .today{
 	line-height: 20px;
@@ -25,12 +25,12 @@
 	width: 5em;
 	background-color: transparent;
 	outline: none;
-	border: 1px solid #f77;
+	border: 1px solid #888;
 }
 .update{
 	display: inline-block;
 	float: right;
-	outline: 1px solid #f77;
+	outline: 1px solid #888;
 	padding: 0 10px;
 	font-size: 12px;
 	cursor: pointer;
@@ -41,33 +41,36 @@
 	width: 250px;
 	height: 150px;
 	text-align: center;
-	background-color: rgba(255,255,255,0.3);
+	background-color: rgba(255,255,255,0.5);
+	box-shadow: 1px 1px 1px #888;
 }
 .todayotherinfo{
 	float: right;
 	margin: 10px 0 0 0;
 	width: 220px;
-	height: 146px;
+	height: 266px;
 	padding: 2px 10px;
-	background-color: rgba(255,255,255,0.3);
+	background-color: rgba(255,255,255,0.5);
 	overflow: hidden;
+	box-shadow: 1px 1px 1px #888;
 }
 .future{
 	float: left;
 	margin-top: 10px;
 	height: 100px;
 	padding: 5px 0;
-	width: 500px;
-	background-color: rgba(255,255,255,0.3);
+	width: 250px;
+	background-color: rgba(255,255,255,0.5);
+	box-shadow: 1px 1px 1px #888;
 }
 .todayinfo h1,.todayinfo p{
 	margin-top: 8px;
 }
-.todayotherinfo h4{
-	margin: 12px 0 5px;
+.todayotherinfo h5{
+	margin: 8px 0 4px;
 }
 .todayotherinfo p{
-	margin-top: 5px;
+	margin-top: 4px;
 	text-align: left;
 	font-size: 12px;
 }
@@ -79,7 +82,7 @@
 	height: 100px;
 	text-align: center;
 }
-.future-item4{
+.future-item2{
 	border: none !important;
 }
 .future ul li p{
