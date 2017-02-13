@@ -1,0 +1,158 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "microsoft yahei";
+}
+body{
+	background-image: url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/retina_wood.png');
+}
+.simon{
+	position: relative;
+	width: 400px;
+	height: 400px;
+	background-color: #fff;
+	border: 20px solid #333;
+	margin: 5% auto;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.simon-item{
+	box-sizing: border-box;
+	width: 200px;
+	height: 200px;
+	float: left;
+	border: 10px solid #333;
+}
+.simon-item1{
+	background-color: #00a74a;
+	border-left: none;
+	border-top: none;
+}
+.simon-item2{
+	background-color: #9f0f17;
+	border-right: none;
+	border-top: none;
+}
+.simon-item3{
+	background-color: #cca707;
+	border-left: none;
+	border-bottom: none;
+}
+.simon-item4{
+	background-color: #094a8f;
+	border-right: none;
+	border-bottom: none;
+}
+.simon-control{
+	box-sizing: border-box;
+	width: 240px;
+	height: 240px;
+	border: 10px solid #333;
+	border-radius: 50%;
+	background-color: #fff;
+	position: absolute;
+	left: 50%;
+	margin-left: -120px;
+	top: 50%;
+	margin-top: -120px;
+}
+.simon-control-title{
+	text-align: center;
+	padding-top: 30px;
+}
+.simon-control-btn{
+	height: 60px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 20px;
+	margin-top: 20px;
+}
+.simon-control-btn .leftpart{
+	display: inline-block;
+	margin: 0 5px;
+	width: 60px;
+}
+.simon-control-btn .leftpart .countbox{
+	box-sizing: border-box;
+	width: 60px;
+	height: 40px;
+	line-height: 34px;
+	background-color: #32050c;
+	color: red;
+	font-size: 18px;
+	border: 3px solid #333;
+	border-radius: 10px;
+}
+.simon-control-btn .middlepart{
+	display: inline-block;
+	margin: 0 5px;
+	width: 40px;
+}
+.simon-control-btn .middlepart .startbtn{
+	box-sizing: border-box;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background-color: red;
+	border: 3px solid #333;
+	border-radius: 50%;
+	box-shadow: 0 1px 4px #333;
+	margin-bottom: 3px;
+}
+.simon-control-btn .rightpart{
+	position: relative;
+	display: inline-block;
+	margin: 0 5px;
+	width: 40px;
+}
+.simon-control-btn .rightpart .strictbtn{
+	box-sizing: border-box;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background-color: yellow;
+	border: 3px solid #333;
+	border-radius: 50%;
+	box-shadow: 0 1px 4px #333;
+	margin-bottom: 3px;
+}
+.simon-control-btn .rightpart .stricton{
+	position: absolute;
+	box-sizing: border-box;
+	width: 10px;
+	height: 10px;
+	border: 2px solid #333;
+	background-color: #32050c;
+	border-radius: 50%;
+	left: 50%;
+	margin-left: -5px;
+	top: -15px;
+}
+.simon-control-switch{
+	text-align: center;
+	height: 20px;
+	font-size: 12px;
+	line-height: 20px;
+	margin-top: 20px;
+
+}
+.simon-control-switch .switchbox{
+	position: relative;
+	display: inline-block;
+	width: 38px;
+	height: 20px;
+	background-color: #333;
+	vertical-align: top;
+	border-radius: 4px;
+}
+.simon-control-switch .switch{
+	position: absolute;
+	box-sizing: border-box;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #333;
+	border-radius: 4px;
+	background-color: #094a8f;
+	top: 0;
+	left: 0;
+}
