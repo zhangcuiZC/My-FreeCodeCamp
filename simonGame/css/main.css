@@ -17,6 +17,7 @@ body{
 	overflow: hidden;
 }
 .simon-item{
+	position: relative;
 	box-sizing: border-box;
 	width: 200px;
 	height: 200px;
@@ -55,6 +56,10 @@ body{
 	margin-left: -120px;
 	top: 50%;
 	margin-top: -120px;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 }
 .simon-control-title{
 	text-align: center;
@@ -78,7 +83,7 @@ body{
 	height: 40px;
 	line-height: 34px;
 	background-color: #32050c;
-	color: red;
+	color: rgba(255,0,0,0.3);
 	font-size: 18px;
 	border: 3px solid #333;
 	border-radius: 10px;
@@ -98,6 +103,7 @@ body{
 	border-radius: 50%;
 	box-shadow: 0 1px 4px #333;
 	margin-bottom: 3px;
+	cursor: pointer;
 }
 .simon-control-btn .rightpart{
 	position: relative;
@@ -115,6 +121,7 @@ body{
 	border-radius: 50%;
 	box-shadow: 0 1px 4px #333;
 	margin-bottom: 3px;
+	cursor: pointer;
 }
 .simon-control-btn .rightpart .stricton{
 	position: absolute;
@@ -126,7 +133,7 @@ body{
 	border-radius: 50%;
 	left: 50%;
 	margin-left: -5px;
-	top: -15px;
+	bottom: 58px;
 }
 .simon-control-switch{
 	text-align: center;
@@ -144,6 +151,7 @@ body{
 	background-color: #333;
 	vertical-align: top;
 	border-radius: 4px;
+	cursor: pointer;
 }
 .simon-control-switch .switch{
 	position: absolute;
@@ -155,4 +163,27 @@ body{
 	background-color: #094a8f;
 	top: 0;
 	left: 0;
+}
+
+.simon-control-btn .leftpart .countnum.active{
+	color: red;
+}
+
+.simon-control-btn .middlepart .startbtn.active{
+	box-shadow: 0 1px 2px #333;
+	margin-bottom: 2px;
+}
+.simon-control-btn .rightpart .strictbtn.active{
+	box-shadow: 0 1px 2px #333;
+	margin-bottom: 2px;
+}
+.simon-control-btn .rightpart .stricton.active{
+	background-color: red;
+}
+.simon-control-switch .switch.active{
+	left: auto;
+	right: 0;
+}
+.simon-item.active{
+	background-color: #fff;
 }
