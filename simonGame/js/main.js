@@ -4,7 +4,6 @@ $(function(){
 			startbtnclickable=false,
 			strictbtnclickable=false,
 			strictmode=false,
-			strictnum=2,
 			randomarr=[],
 			yourarr=[],
 			count=0,
@@ -15,11 +14,7 @@ $(function(){
 
 		// 电脑开始下一回合
 		function nextRound(){
-			// 是否使用严格模式
-			strictnum=(function(){
-				return strictmode?4:2;
-			}());
-			randomarr.push(Math.floor(Math.random()*strictnum));
+			randomarr.push(Math.floor(Math.random()*4));
 			count=randomarr.length;
 			// 顺序显示这一回合
 			$(randomarr).each(function(index, el) {
@@ -41,23 +36,24 @@ $(function(){
 		// 玩家的回合
 		function yourRound(){
 			yourarr=[];
-			
-			$item.bind('click', function(event) {
-				var self=$(this);
-				self.addClass('active');
-				setTimeout(function(){
-					self.removeClass('active');
-				},100);
-				yourarr.push($(this).index());
-				// 检查是否正确
-				if(yourarr.length===randomarr.length){
-					$item.unbind('click');
-					checkSelect();
+
+			$item.bind({
+				mousedown: function(){
+					$(this).addClass('active');
+				},
+				mouseup: function(){
+					$(this).removeClass('active');
+					yourarr.push($(this).index());
+					// 检查是否正确
+					if(yourarr.length===randomarr.length){
+						$item.unbind('mousedown mouseup');
+						checkSelect();
+					}
 				}
 			});
 		}
 
-
+		// 检查是否正确
 		function checkSelect(){
 			if(yourarr.toString()===randomarr.toString()){
 				// 如果正确，开始下一回合
@@ -66,8 +62,13 @@ $(function(){
 				// 否则，重新开始这一回合
 				$countnum.text("!!").fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
 				againtimer=setTimeout(function(){
-					randomarr.pop();
-					nextRound();
+					if(!strictmode){
+						randomarr.pop();
+						nextRound();
+					}else{
+						randomarr=[];
+						nextRound();
+					}
 				},1000);
 			}
 		}
@@ -108,12 +109,14 @@ $(function(){
 			$(this).find('.switch').toggleClass('active');
 			switchon = switchon ? false : true;
 			if(switchon){
+				randomarr=[];
 				startbtnclickable=true;
 				strictbtnclickable=true;
 				$countnum.text("00").addClass('active');
 			}else{
 				startbtnclickable=false;
 				strictbtnclickable=false;
+				strictmode=false;
 				$(".stricton").removeClass('active');
 				if(nextroundtimer.length>0){
 					for(var i in nextroundtimer){
@@ -123,7 +126,6 @@ $(function(){
 				if(againtimer){
 					clearTimeout(againtimer);
 				}
-				randomarr=[];
 				$countnum.text("--").removeClass('active');
 			}
 		});

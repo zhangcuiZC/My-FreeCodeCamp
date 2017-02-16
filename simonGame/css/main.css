@@ -160,7 +160,7 @@ body{
 	height: 20px;
 	border: 2px solid #333;
 	border-radius: 4px;
-	background-color: #094a8f;
+	background-color: #41D3BD;
 	top: 0;
 	left: 0;
 }
@@ -184,6 +184,15 @@ body{
 	left: auto;
 	right: 0;
 }
-.simon-item.active{
-	background-color: #fff;
+.simon-item1.active{
+	background-color: #8CD790;
+}
+.simon-item2.active{
+	background-color: #f94e3f;
+}
+.simon-item3.active{
+	background-color: #feee7d;
+}
+.simon-item4.active{
+	background-color: #30A9DE;
 }
