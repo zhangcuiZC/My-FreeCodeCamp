@@ -35,6 +35,9 @@
 .ttt-item.ai{
 	color: red;
 }
+.ttt-item.temp{
+	color: transparent;
+}
 .tttinfo{
 	text-align: center;
 }
