@@ -1,0 +1,40 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "microsoft yahei";
+}
+.tttbox{
+	width: 450px;
+	height: 450px;
+	margin: 5% auto;
+	background-color: #ccc;
+	border: 5px solid #555;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	font-size: 48px;
+	font-weight: bold;
+}
+.ttt-item{
+	box-sizing: border-box;
+	width: 150px;
+	height: 150px;
+	border: 5px solid #555;
+	float: left;
+	line-height: 140px;
+	text-align: center;
+}
+.ttt-item:hover{
+	background-color: #eee;
+}
+.ttt-item.player{
+	color: green;
+}
+.ttt-item.ai{
+	color: red;
+}
+.tttinfo{
+	text-align: center;
+}
