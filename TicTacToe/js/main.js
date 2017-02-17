@@ -35,7 +35,7 @@ $(function(){
 				return $item.eq(index).text()==="";
 			});
 			if($emptyitem.length===0){
-				$("h1").text("和局");
+				$("h1.tttinfo").text("和局");
 				setTimeout(function(){
 					reset();
 				}, 1000);
@@ -121,7 +121,7 @@ $(function(){
 	function gameOver(msg){
 		gameover=true;
 		playerturn=false;
-		$("h1").text(msg);
+		$("h1.tttinfo").text(msg);
 		setTimeout(function(){
 			reset();
 		}, 1000);
@@ -131,6 +131,6 @@ $(function(){
 		$item.text("").removeClass('ai player temp');
 		gameover=false;
 		playerturn=true;
-		$("h1").text("");
+		$("h1.tttinfo").text("");
 	}
 });
