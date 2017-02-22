@@ -3,31 +3,32 @@
 	padding: 0;
 	font-family: "microsoft yahei",sans-serif;
 }
-.weather-box{
+.weather{
+	box-sizing: content-box;
 	padding: 20px;
 	width: 500px;
 	height: 300px;
-	margin: 10% auto;
-	background: #f77 url(../bg.jpg) no-repeat center;
-	-webkit-background-size: cover;
+	margin: 5% auto;
+	background: #fff url(../weatherModuleBg.jpg) no-repeat center;
 	background-size: cover;
+	border: 1px solid #ddd;
 }
-.today{
+.weather-today{
 	line-height: 20px;
 	position: relative;
 }
-.choosecity{
+.weather-choosecity{
 	position: absolute;
 	top: 0;
 	right: 50px;
 }
-.choosecity .city{
+.weather-city{
 	width: 5em;
 	background-color: transparent;
 	outline: none;
 	border: 1px solid #888;
 }
-.update{
+.weather-update{
 	display: inline-block;
 	float: right;
 	outline: 1px solid #888;
@@ -35,7 +36,10 @@
 	font-size: 12px;
 	cursor: pointer;
 }
-.todayinfo{
+.weather-update:hover{
+	background-color: #eee;
+}
+.weather-todayinfo{
 	float: left;
 	margin-top: 10px;
 	width: 250px;
@@ -44,7 +48,10 @@
 	background-color: rgba(255,255,255,0.5);
 	box-shadow: 1px 1px 1px #888;
 }
-.todayotherinfo{
+.weather-todayinfo h1,.weather-todayinfo p{
+	margin-top: 8px;
+}
+.weather-todayotherinfo{
 	float: right;
 	margin: 10px 0 0 0;
 	width: 220px;
@@ -54,7 +61,15 @@
 	overflow: hidden;
 	box-shadow: 1px 1px 1px #888;
 }
-.future{
+.weather-todayotherinfo h5{
+	margin: 8px 0 4px;
+}
+.weather-todayotherinfo p{
+	margin-top: 4px;
+	text-align: left;
+	font-size: 12px;
+}
+.weather-future{
 	float: left;
 	margin-top: 10px;
 	height: 100px;
@@ -63,18 +78,7 @@
 	background-color: rgba(255,255,255,0.5);
 	box-shadow: 1px 1px 1px #888;
 }
-.todayinfo h1,.todayinfo p{
-	margin-top: 8px;
-}
-.todayotherinfo h5{
-	margin: 8px 0 4px;
-}
-.todayotherinfo p{
-	margin-top: 4px;
-	text-align: left;
-	font-size: 12px;
-}
-.future ul li{
+.weather-future ul li{
 	float: left;
 	width: 124px;
 	border-right: 1px solid #eee;
@@ -82,13 +86,13 @@
 	height: 100px;
 	text-align: center;
 }
-.future-item2{
+.weather-future-item2{
 	border: none !important;
 }
-.future ul li p{
+.weather-future li p{
 	font-size: 12px;
 	margin-top: 3px;
 }
-.future ul li h3{
+.weather-future li h3{
 	margin: 10px 0;
 }
