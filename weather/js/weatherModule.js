@@ -1,4 +1,5 @@
 var weatherModule = (function(){
+	// ----------------------------------以下：声明变量----------------------------------
 	var weather_html = ""
 		+ '<div class="weather">'
 			+ '<h5 class="weather-today">'
@@ -43,31 +44,12 @@ var weatherModule = (function(){
 			+ '</div>'
 		+ '</div>',
 
-		jqueryMap = {
-			// $container : null,
-			// $today_day : null,
-			// $today_year : null,
-			// $today_month : null,
-			// $today_date : null,
-			// $city : null,
-			// $this_city : null,
-			// $update_time : null,
-			// $now_temp : null,
-			// $cold_info : null,
-			// $air_info : null,
-			// $comf_info : null,
-			// $temp_range : null,
-			// $temp_type : null,
-			// $temp_wind : null,
-			// $temp_aqi : null,
-			// $future_list : null,
-			// $update_weather : null
-		},
+		jqueryMap = {},
 		setJqueryMap,
 		updateDate, 
 		updateWeather,
 		initModule;
-
+		// ----------------------------------以上：声明变量----------------------------------
 		// ----------------------------------以下：私有方法----------------------------------
 		setJqueryMap = function($container){
 			jqueryMap.$today_day = $container.find('.weather-day');
